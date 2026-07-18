@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "ZETHUB | TLK PRISON | V4.1",
+   Name = "ZETHUB | TLK PRISON | V-MAX",
    LoadingTitle = "Loading......",
    LoadingSubtitle = "by Zeutronxsite",
    ShowText = "Zethub", -- for mobile users to unhide Rayfield, change if you'd like
@@ -44,22 +44,24 @@ local Team = Window:CreateTab("🚹 Team & Esp", nil)
 local Other = Window:CreateTab("🔧 Scripts & Tools", nil)
 local Target = Window:CreateTab("🎯 Target & Player", nil)
 local Theme = Window:CreateTab("🎨 Theme & Teleport", nil)
-local Misc = Window:CreateTab("🔥 Credits", nil)
+local Misc = Window:CreateTab("🔥 Creadits", nil)
 
 -- ==========================================
 -- UI TABS & SECTIONS
 -- ==========================================
 local MainSection = Change:CreateSection("Information & Version")
 
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 2.85", Content = "- [+] Fixed Mobile Not Support For UI Walkspeed\n- [+] Add Infinite Yield In Checking\n- [+] Add Auto Drop Food\n- [+] Add Admin/Dev Detection\n- [+] Add Anti Vote-kick Bypass"})
+local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 3.0", Content = "- [+] Fixed Mobile Not Support For UI Walkspeed\n- [+] Add Infinite Yield In Checking\n- [+] Add Auto Drop Food\n- [+] Add Admin/Dev Detection\n- [+] Add Anti Vote-kick Bypass"})
 
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 3.0", Content = "- [+] Add Target\n- [!!] Moved Keybind One Hit to Target Tab\n- [+] Change Script God Mode >> Freecam\n- [+] Add Auto Drop Flashlight\n- [!!] Delete Anti Vote-Kick"})
+local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 3.4", Content = "- [+] Add Target\n- [!!] Moved Keybind One Hit to Target Tab\n- [+] Change Script God Mode >> Freecam\n- [+] Add Auto Drop Flashlight\n- [!!] Delete Anti Vote-Kick"})
 
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 3.4", Content = "- [+] Add highlights for tools esp, food esp and other esp\n- [!!] Remake Esp Target\n- [+] Add None (Close Tab) in Change Team\n- [+] Add Fly (Cframe)\n- [+] Add Teleport\n- [+] Fixed Out Of Local Exit\n- [+] Change Theme Button » Dropdown"})
+local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 3.8", Content = "- [+] Add highlights for tools esp, food esp and other esp\n- [!!] Remake Esp Target\n- [+] Add None (Close Tab) in Change Team\n- [+] Add Fly (Cframe)\n- [+] Add Teleport\n- [+] Fixed Out Of Local Exit\n- [+] Change Theme Button » Dropdown"})
 
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 3.7", Content = "- [+] Change Some Button to Dropdown\n- [+] Add Teleport\n- [+] Add Teleport Tools\n- [+] Add Teleport Player\n- [+] More Details\n- [+] Add Teleport Food\n- [+] Add Teleport Other\n- [!!] Fixed Bugs Script\n- [+] Add System Checking"})
+local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 4.2", Content = "- [+] Change Some Button to Dropdown\n- [+] Add Teleport\n- [+] Add Teleport Tools\n- [+] Add Teleport Player\n- [+] More Details\n- [+] Add Teleport Food\n- [+] Add Teleport Other\n- [!!] Fixed Bugs Script\n- [+] Add System Checking"})
 
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 4.1 (Latest Update)", Content = "- [+] Add New System Checking\n- [+] Add System Checking UI\n- [+] Add Loading Bar 0-100%\n- [+] Add Log Checking\n- [+] Add Border RGB/Rainbow\n- [+] Add Watermark\n- [+] Fixed Some Bugs\n- [+] Add Colorful In Esp Player"})
+local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 4.5", Content = "- [+] Add New System Checking\n- [+] Add System Checking UI\n- [+] Add Loading Bar 0-100%\n- [+] Add Log Checking\n- [+] Add Border RGB/Rainbow\n- [+] Add Watermark\n- [+] Fixed Some Bugs\n- [+] Add Colorful In Esp Player"})
+
+local Paragraph = Change:CreateParagraph({Title = "✅ VERSION MAX (Will no longer be updated)", Content = "- [+] Remake System Checking For Mobile [Coming Soon] \n- [+] Fixed Some Bugs\n- [+] Add More Details\n- [+] Add Destroy UI\n- [!!] Deleted Bypass Anti-Cheat V1 & V2\n- [+] Add New System Checking For Computer"})
 
 local MainSection = MainTab:CreateSection("Main Script Toggle")
 local Paragraph = MainTab:CreateParagraph({Title = "📢 INFORMATION", Content = "Auto Attack & Auto Heal Working Now, Keybind One Hit (F) moved to the target tab"})
@@ -504,9 +506,9 @@ local Toggle = Bypass:CreateToggle({
         if Value then
             -- Saat toggle dinyalakan, langsung cek pemain yang sudah ada di server
             CheckAllPlayers()
-            print("ZENHUB: Anti-Ban System ON - Monitoring for admins...")
+            info("ZENHUB: Anti-Ban System ON - Monitoring for admins...")
         else
-            print("ZENHUB: Anti-Ban System OFF")
+            info("ZENHUB: Anti-Ban System OFF")
         end
     end,
 })
@@ -610,7 +612,7 @@ local Dropdown = Team:CreateDropdown({
            end)
            
            if success then
-               print("[Change Team] Successfully moved to the team: " .. selectedTeam)
+               info("[Change Team] Successfully moved to the team: " .. selectedTeam)
            else
                warn("[Change Team] Failed to fire signal: " .. tostring(err))
            end
@@ -622,7 +624,7 @@ local Dropdown = Team:CreateDropdown({
                -- Set Team langsung
                lp.Team = targetTeam
                lp.TeamColor = targetTeam.TeamColor
-               print("[Change Team] Successfully moved to " .. selectedTeam .. " (Direct Method)")
+               info("[Change Team] Successfully moved to " .. selectedTeam .. " (Direct Method)")
            else
                warn("[Change Team] Team '" .. selectedTeam .. "' Not found in the game!")
            end
@@ -1168,7 +1170,7 @@ local function scanAllTools()
         end
     end
     
-    print("[ESP] Scan complete. Number of tools detected: " .. count)
+    info("[ESP] Scan complete. Number of tools detected: " .. count)
     return count
 end
 
@@ -1477,7 +1479,7 @@ local function scanAllTools()
         end
     end
     
-    print("[ESP] Scan complete. Number of tools detected: " .. count)
+    info("[ESP] Scan complete. Number of tools detected: " .. count)
     return count
 end
 
@@ -1789,7 +1791,7 @@ local function scanAllTools()
         end
     end
     
-    print("[ESP] Scan complete. Number of tools detected: " .. count)
+    info("[ESP] Scan complete. Number of tools detected: " .. count)
     return count
 end
 
@@ -2350,9 +2352,7 @@ local Paragraph = Misc:CreateParagraph({Title = "⚒️ CREATOR SCRIPT", Content
 
 local Paragraph = Misc:CreateParagraph({Title = "🔍 LINK SCRIPTS & SUPPORT", Content = "- Pastebin.com/u/Ty4rds\n- https://github.com/ioerhub"})
 
-local Paragraph = Misc:CreateParagraph({Title = "🛡️ INFORMATION", Content = "- Latest Version: Latest Update\n- Max Version: 5.0\n- Status: 🟡 Progress"})
-
-local Paragraph = Misc:CreateParagraph({Title = "🌐 GROUP & TEAM", Content = "- @Zeutron Community\n- @Zyptrue Dev Community\n- @IOER State Community"})
+local Paragraph = Misc:CreateParagraph({Title = "🛡️ INFORMATION", Content = "- Latest Version: Latest Update\n- Max Version: 5.0\n- Status: ⚪ Discountinue"})
 
 local MainSection = Theme:CreateSection("Choose Theme")
 local Paragraph = Theme:CreateParagraph({Title = "📢 INFORMATION", Content = "All these themes are built-in from Rayfield"})
@@ -2765,7 +2765,12 @@ local Keybind = Target:CreateKeybind({
                             tool:Activate()
                         end
                     end
-                    
+                Rayfield:Notify({
+                    Title = "📢 INFORMATION",
+                    Content = "One Hit has been executed!",
+                    Duration = 3,
+                    Image = "check",
+                })
             end
         end)
     end
@@ -2814,5 +2819,20 @@ local Button = Theme:CreateButton({
     Name = "Teleporter",
     Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Zyptrue/Teleporter/refs/heads/main/Next"))()
+   end
+})
+
+local MainSection = Misc:CreateSection("More Settings")
+local Button = Misc:CreateButton({
+    Name = "Destroy UI/Interface",
+    Callback = function()
+    Rayfield:Notify({
+                    Title = "⚠️ WARNING DETECTED",
+                    Content = "The script will self-destruct in 10 seconds!",
+                    Duration = 10,
+                    Image = "shield-alert",
+                })
+        wait(10)
+    Rayfield:Destroy()
    end
 })
