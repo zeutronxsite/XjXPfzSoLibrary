@@ -61,7 +61,7 @@ local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 4.2", Content = "
 
 local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 4.5", Content = "- [+] Add New System Checking\n- [+] Add System Checking UI\n- [+] Add Loading Bar 0-100%\n- [+] Add Log Checking\n- [+] Add Border RGB/Rainbow\n- [+] Add Watermark\n- [+] Fixed Some Bugs\n- [+] Add Colorful In Esp Player"})
 
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION MAX (Will no longer be updated)", Content = "- [+] Remake System Checking For Mobile [Coming Soon] \n- [+] Fixed Some Bugs\n- [+] Add More Details\n- [+] Add Destroy UI\n- [+] Add More Information\n- [+] Add New System Checking For Computer"})
+local Paragraph = Change:CreateParagraph({Title = "✅ VERSION MAX (Will no longer be updated)", Content = "- [+] Remake System Checking For Mobile\n- [+] Fixed Some Bugs\n- [+] Add More Details\n- [+] Add Destroy UI\n- [+] Add More Information\n- [+] Add New System Checking For Computer\n- [!!] Some Bugs It won't be fixed again, so enjoy it while you can"})
 
 local MainSection = MainTab:CreateSection("Main Script Toggle")
 local Paragraph = MainTab:CreateParagraph({Title = "📢 INFORMATION", Content = "Auto Attack & Auto Heal Working Now, Keybind One Hit (F) moved to the target tab"})
