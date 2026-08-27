@@ -2349,7 +2349,7 @@ local Dropdown = Other:CreateDropdown({
 
 
 local MainSection = Misc:CreateSection("Information")
-local Paragraph = Misc:CreateParagraph({Title = "⚒️ CREATOR SCRIPT", Content = "Owner: Zeutronxsite\n- Developer: Zyruuux\n- Programmer: 4Streakzx & 3Streakzx\n- Builder Script: Therepositori\n- Tester Script: Exterminate0"})
+local Paragraph = Misc:CreateParagraph({Title = "⚒️ CREATOR SCRIPT", Content = "- Owner: Zeutronxsite\n- Developer: Zyruuux\n- Programmer: 4Streakzx & 3Streakzx\n- Builder Script: Therepositori\n- Tester Script: Exterminate0"})
 
 local Paragraph = Misc:CreateParagraph({Title = "🔍 LINK SCRIPTS & SUPPORT", Content = "- Pastebin.com/u/Ty4rds\n- https://github.com/ioerhub"})
 
