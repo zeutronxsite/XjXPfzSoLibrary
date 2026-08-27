@@ -2,6 +2,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
    Name = "ZETHUB | TLK PRISON | V-MAX",
+   Icon = "database-search",
    LoadingTitle = "Loading......",
    LoadingSubtitle = "by Zeutronxsite",
    ShowText = "Zethub", -- for mobile users to unhide Rayfield, change if you'd like
@@ -22,13 +23,13 @@ local Window = Rayfield:CreateWindow({
 
 -- Notification Rayfield
 Rayfield:Notify({
-   Title = "⚠️ NOTIFICATION ALERT",
+   Title = "⚠️ Notification Alert",
    Content = "- Thank you for using this script\n- This script is still in beta stage so there are many bugs",
    Duration = 5,
-   Image = 4483362458,
+   Image = "megaphone",
    Actions = { -- Notification Buttons
       Ignore = {
-         Name = "Okay!",
+         Name = "Okay",
          Callback = function()
       end
    },
@@ -36,32 +37,32 @@ Rayfield:Notify({
 })
 
 -- Name Scripts/Local Script
-local Change = Window:CreateTab("📰 Changelog", nil)
-local MainTab = Window:CreateTab("⚔️ Attack", nil)
-local Buff = Window:CreateTab("🔄️ Buffer", nil)
-local Bypass = Window:CreateTab("🛡️ Anti Cheat Bypass", nil)
-local Team = Window:CreateTab("🚹 Team & Esp", nil)
-local Other = Window:CreateTab("🔧 Scripts & Tools", nil)
-local Target = Window:CreateTab("🎯 Target & Player", nil)
-local Theme = Window:CreateTab("🎨 Theme & Teleport", nil)
-local Misc = Window:CreateTab("🔥 Creadits", nil)
+local Change = Window:CreateTab("Changelog", "newspaper")
+local MainTab = Window:CreateTab("Attack", "swords")
+local Buff = Window:CreateTab("Buffer", "clock-arrow-up")
+local Bypass = Window:CreateTab("Anti Cheat Bypass", "shield-lock")
+local Team = Window:CreateTab("Team & Esp", "users")
+local Other = Window:CreateTab("Scripts & Tools", "wrench")
+local Target = Window:CreateTab("Target & Player", "crosshair")
+local Theme = Window:CreateTab("Theme & Teleport", "palette")
+local Misc = Window:CreateTab("Creadits", "flame")
 
 -- ==========================================
 -- UI TABS & SECTIONS
 -- ==========================================
 local MainSection = Change:CreateSection("Information & Version")
 
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 3.0", Content = "- [+] Fixed Mobile Not Support For UI Walkspeed\n- [+] Add Infinite Yield In Checking\n- [+] Add Auto Drop Food\n- [+] Add Admin/Dev Detection\n- [+] Add Anti Vote-kick Bypass"})
+local Paragraph = Change:CreateParagraph({Title = "🔚 VERSION 3.4", Content = "- [+] Add Target\n- [!!] Moved Keybind One Hit to Target Tab\n- [+] Change Script God Mode >> Freecam\n- [+] Add Auto Drop Flashlight\n- [!!] Delete Anti Vote-Kick"})
 
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 3.4", Content = "- [+] Add Target\n- [!!] Moved Keybind One Hit to Target Tab\n- [+] Change Script God Mode >> Freecam\n- [+] Add Auto Drop Flashlight\n- [!!] Delete Anti Vote-Kick"})
+local Paragraph = Change:CreateParagraph({Title = "🔚 VERSION 3.8", Content = "- [+] Add highlights for tools esp, food esp and other esp\n- [!!] Remake Esp Target\n- [+] Add None (Close Tab) in Change Team\n- [+] Add Fly (Cframe)\n- [+] Add Teleport\n- [+] Fixed Out Of Local Exit\n- [+] Change Theme Button » Dropdown"})
 
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 3.8", Content = "- [+] Add highlights for tools esp, food esp and other esp\n- [!!] Remake Esp Target\n- [+] Add None (Close Tab) in Change Team\n- [+] Add Fly (Cframe)\n- [+] Add Teleport\n- [+] Fixed Out Of Local Exit\n- [+] Change Theme Button » Dropdown"})
+local Paragraph = Change:CreateParagraph({Title = "🔚 VERSION 4.2", Content = "- [+] Change Some Button to Dropdown\n- [+] Add Teleport\n- [+] Add Teleport Tools\n- [+] Add Teleport Player\n- [+] More Details\n- [+] Add Teleport Food\n- [+] Add Teleport Other\n- [!!] Fixed Bugs Script\n- [+] Add System Checking"})
 
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 4.2", Content = "- [+] Change Some Button to Dropdown\n- [+] Add Teleport\n- [+] Add Teleport Tools\n- [+] Add Teleport Player\n- [+] More Details\n- [+] Add Teleport Food\n- [+] Add Teleport Other\n- [!!] Fixed Bugs Script\n- [+] Add System Checking"})
+local Paragraph = Change:CreateParagraph({Title = "🔚 VERSION 4.5", Content = "- [+] Add New System Checking\n- [+] Add System Checking UI\n- [+] Add Loading Bar 0-100%\n- [+] Add Log Checking\n- [+] Add Border RGB/Rainbow\n- [+] Add Watermark\n- [+] Fixed Some Bugs\n- [+] Add Colorful In Esp Player"})
 
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 4.5", Content = "- [+] Add New System Checking\n- [+] Add System Checking UI\n- [+] Add Loading Bar 0-100%\n- [+] Add Log Checking\n- [+] Add Border RGB/Rainbow\n- [+] Add Watermark\n- [+] Fixed Some Bugs\n- [+] Add Colorful In Esp Player"})
+local Paragraph = Change:CreateParagraph({Title = "🔚 VERSION MAXIMUM", Content = "- [+] Remake System Checking For Mobile\n- [+] Fixed Some Bugs\n- [+] Add More Details\n- [+] Add Destroy UI\n- [+] Add More Information\n- [+] Add New System Checking For Computer"})
 
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION MAX (Will no longer be updated)", Content = "- [+] Remake System Checking For Mobile\n- [+] Fixed Some Bugs\n- [+] Add More Details\n- [+] Add Destroy UI\n- [+] Add More Information\n- [+] Add New System Checking For Computer\n- [!!] Some Bugs It won't be fixed again, so enjoy it while you can"})
+local Paragraph = Change:CreateParagraph({Title = "✅ FINAL UPDATED (Will no longer be Updated)", Content = "- [+] Add More Details\n- [+] Changes Icon And Image\n- [+] Fixed Some Bugs"})
 
 local MainSection = MainTab:CreateSection("Main Script Toggle")
 local Paragraph = MainTab:CreateParagraph({Title = "📢 INFORMATION", Content = "Auto Attack & Auto Heal Working Now, Keybind One Hit (F) moved to the target tab"})
@@ -263,14 +264,14 @@ local Keybind = MainTab:CreateKeybind({
         -- Tampilkan notifikasi sesuai status
         if autoDropFoodActive then
             Rayfield:Notify({
-                Title = "🛡️ INFORMATION",
+                Title = "✅ Information",
                 Content = "Auto Drop Food: ON",
                 Duration = 5,
                 Image = "check",
             })
         else
             Rayfield:Notify({
-                Title = "🛡️ INFORMATION",
+                Title = "❌ Information",
                 Content = "Auto Drop Food: OFF",
                 Duration = 5,
                 Image = "x",
@@ -336,14 +337,14 @@ local Keybind = MainTab:CreateKeybind({
         -- Tampilkan notifikasi sesuai status
         if autoDropFoodActive then
             Rayfield:Notify({
-                Title = "🛡️ INFORMATION",
+                Title = "✅ Information",
                 Content = "Auto Drop Flashlight: ON",
                 Duration = 5,
                 Image = "check",
             })
         else
             Rayfield:Notify({
-                Title = "🛡️ INFORMATION",
+                Title = "❌ Information",
                 Content = "Auto Drop Flashlight: OFF",
                 Duration = 5,
                 Image = "x",
@@ -417,7 +418,7 @@ local Paragraph = Bypass:CreateParagraph({Title = "⚠️ WARNING", Content = "S
 local Toggle = Bypass:CreateToggle({
    Name = "Anti-Cheat Remover (Auto Bypass)",
    CurrentValue = true,
-   Flag = "Auto heal",
+   Flag = "Anti-CheatV2",
    Callback = function()
    end,
 })
@@ -470,13 +471,13 @@ end
 -- Fungsi untuk melakukan kick diri sendiri
 local function KickSelf(adminName)
     Rayfield:Notify({
-    Title = "⚠️ ADMIN DETECTED",
+    Title = "⚠️ Admin Detected!",
     Content = "Admin '" .. adminName .. "' terdeteksi! Kicking to avoid ban...",
     Duration = 6,
     Image = "triangle-alert",
 })
     wait(2) -- Jeda 2 detik agar notifikasi sempat terbaca sebelum kick
-    game.Players.LocalPlayer:Kick("ZENHUB Anti-Ban: Admin (" .. adminName .. ") Detected. Exiting to avoid a ban!")
+    game.Players.LocalPlayer:Kick("Anti-Ban System: Admin (" .. adminName .. ") Detected. Exiting to avoid a ban!")
 end
 
 -- Fungsi untuk mengecek semua pemain yang sudah ada di server
@@ -2523,7 +2524,7 @@ local function setupTargetESP(char)
     nameLabel.Size = UDim2.new(1, 0, 0, 14)
     nameLabel.Position = UDim2.new(0, 0, 0, 0)
     nameLabel.BackgroundTransparency = 1
-    nameLabel.Text = "[🎯Target] " .. CurrentTarget.Name
+    nameLabel.Text = "[Target] " .. CurrentTarget.Name
     nameLabel.TextColor3 = targetColor
     nameLabel.TextStrokeTransparency = 0
     nameLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
@@ -2766,10 +2767,10 @@ local Keybind = Target:CreateKeybind({
                         end
                     end
                 Rayfield:Notify({
-                    Title = "📢 INFORMATION",
-                    Content = "One Hit has been executed!",
+                    Title = "⚔️ Information Alert",
+                    Content = "One Hit has been triggered!",
                     Duration = 3,
-                    Image = "check",
+                    Image = "swords",
                 })
             end
         end)
@@ -2827,12 +2828,12 @@ local Button = Misc:CreateButton({
     Name = "Destroy UI/Interface",
     Callback = function()
     Rayfield:Notify({
-                    Title = "⚠️ WARNING DETECTED",
-                    Content = "The script will self-destruct in 10 seconds!",
-                    Duration = 10,
+                    Title = "⚠️ Warning Detected!",
+                    Content = "The script will self-destruct in 7 seconds!",
+                    Duration = 7,
                     Image = "shield-alert",
                 })
-        wait(10)
+        wait(7)
     Rayfield:Destroy()
    end
 })
