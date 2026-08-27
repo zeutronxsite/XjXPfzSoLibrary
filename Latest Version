@@ -52,15 +52,15 @@ local Misc = Window:CreateTab("Creadits", "flame")
 -- ==========================================
 local MainSection = Change:CreateSection("Information & Version")
 
-local Paragraph = Change:CreateParagraph({Title = "🔚 VERSION 3.4", Content = "- [+] Add Target\n- [!!] Moved Keybind One Hit to Target Tab\n- [+] Change Script God Mode >> Freecam\n- [+] Add Auto Drop Flashlight\n- [!!] Delete Anti Vote-Kick"})
+local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 3.4", Content = "- [+] Add Target\n- [!!] Moved Keybind One Hit to Target Tab\n- [+] Change Script God Mode >> Freecam\n- [+] Add Auto Drop Flashlight\n- [!!] Delete Anti Vote-Kick"})
 
-local Paragraph = Change:CreateParagraph({Title = "🔚 VERSION 3.8", Content = "- [+] Add highlights for tools esp, food esp and other esp\n- [!!] Remake Esp Target\n- [+] Add None (Close Tab) in Change Team\n- [+] Add Fly (Cframe)\n- [+] Add Teleport\n- [+] Fixed Out Of Local Exit\n- [+] Change Theme Button » Dropdown"})
+local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 3.8", Content = "- [+] Add highlights for tools esp, food esp and other esp\n- [!!] Remake Esp Target\n- [+] Add None (Close Tab) in Change Team\n- [+] Add Fly (Cframe)\n- [+] Add Teleport\n- [+] Fixed Out Of Local Exit\n- [+] Change Theme Button » Dropdown"})
 
-local Paragraph = Change:CreateParagraph({Title = "🔚 VERSION 4.2", Content = "- [+] Change Some Button to Dropdown\n- [+] Add Teleport\n- [+] Add Teleport Tools\n- [+] Add Teleport Player\n- [+] More Details\n- [+] Add Teleport Food\n- [+] Add Teleport Other\n- [!!] Fixed Bugs Script\n- [+] Add System Checking"})
+local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 4.2", Content = "- [+] Change Some Button to Dropdown\n- [+] Add Teleport\n- [+] Add Teleport Tools\n- [+] Add Teleport Player\n- [+] More Details\n- [+] Add Teleport Food\n- [+] Add Teleport Other\n- [!!] Fixed Bugs Script\n- [+] Add System Checking"})
 
-local Paragraph = Change:CreateParagraph({Title = "🔚 VERSION 4.5", Content = "- [+] Add New System Checking\n- [+] Add System Checking UI\n- [+] Add Loading Bar 0-100%\n- [+] Add Log Checking\n- [+] Add Border RGB/Rainbow\n- [+] Add Watermark\n- [+] Fixed Some Bugs\n- [+] Add Colorful In Esp Player"})
+local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 4.5", Content = "- [+] Add New System Checking\n- [+] Add System Checking UI\n- [+] Add Loading Bar 0-100%\n- [+] Add Log Checking\n- [+] Add Border RGB/Rainbow\n- [+] Add Watermark\n- [+] Fixed Some Bugs\n- [+] Add Colorful In Esp Player"})
 
-local Paragraph = Change:CreateParagraph({Title = "🔚 VERSION MAXIMUM", Content = "- [+] Remake System Checking For Mobile\n- [+] Fixed Some Bugs\n- [+] Add More Details\n- [+] Add Destroy UI\n- [+] Add More Information\n- [+] Add New System Checking For Computer"})
+local Paragraph = Change:CreateParagraph({Title = "✅ VERSION MAXIMUM", Content = "- [+] Remake System Checking For Mobile\n- [+] Fixed Some Bugs\n- [+] Add More Details\n- [+] Add Destroy UI\n- [+] Add More Information\n- [+] Add New System Checking For Computer"})
 
 local Paragraph = Change:CreateParagraph({Title = "✅ FINAL UPDATED (Will no longer be Updated)", Content = "- [+] Add More Details\n- [+] Changes Icon And Image\n- [+] Fixed Some Bugs"})
 
@@ -2349,11 +2349,11 @@ local Dropdown = Other:CreateDropdown({
 
 
 local MainSection = Misc:CreateSection("Information")
-local Paragraph = Misc:CreateParagraph({Title = "⚒️ CREATOR SCRIPT", Content = "- 3streakzx: Programmer\n- 4Streakzx: Builder\n- Therepositori & kamunanya3vx: Tester Scripts"})
+local Paragraph = Misc:CreateParagraph({Title = "⚒️ CREATOR SCRIPT", Content = "Owner: Zeutronxsite\n- Developer: Zyruuux\n- Programmer: 4Streakzx & 3Streakzx\n- Builder Script: Therepositori\n- Tester Script: Exterminate0"})
 
 local Paragraph = Misc:CreateParagraph({Title = "🔍 LINK SCRIPTS & SUPPORT", Content = "- Pastebin.com/u/Ty4rds\n- https://github.com/ioerhub"})
 
-local Paragraph = Misc:CreateParagraph({Title = "🛡️ INFORMATION", Content = "- Latest Version: Latest Update\n- Max Version: 5.0\n- Status: ⚪ Discountinue"})
+local Paragraph = Misc:CreateParagraph({Title = "🛡️ INFORMATION", Content = "- Created Team: ZeutronX\n- Max Version: Final Update\n- Status: ⚪ Discountinue"})
 
 local MainSection = Theme:CreateSection("Choose Theme")
 local Paragraph = Theme:CreateParagraph({Title = "📢 INFORMATION", Content = "All these themes are built-in from Rayfield"})
