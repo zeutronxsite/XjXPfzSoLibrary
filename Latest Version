@@ -40,7 +40,7 @@ Rayfield:Notify({
 local Change = Window:CreateTab("Changelog", "newspaper")
 local MainTab = Window:CreateTab("Attack", "swords")
 local Buff = Window:CreateTab("Buffer", "gauge")
-local Bypass = Window:CreateTab("Anti Cheat Bypass", "shield-lock")
+local Bypass = Window:CreateTab("Anti Cheat Bypass", "shield-alert")
 local Team = Window:CreateTab("Team & Esp", "users")
 local Other = Window:CreateTab("Scripts & Tools", "wrench")
 local Target = Window:CreateTab("Target & Player", "crosshair")
