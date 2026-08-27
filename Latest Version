@@ -23,7 +23,7 @@ local Window = Rayfield:CreateWindow({
 
 -- Notification Rayfield
 Rayfield:Notify({
-   Title = "⚠️ Notification Alert",
+   Title = "📢 Notification Alert",
    Content = "- Thank you for using this script\n- This script is still in beta stage so there are many bugs",
    Duration = 5,
    Image = "megaphone",
