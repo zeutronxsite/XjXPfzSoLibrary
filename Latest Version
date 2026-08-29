@@ -6,7 +6,7 @@ local Window = Rayfield:CreateWindow({
    LoadingTitle = "Loading......",
    LoadingSubtitle = "by Zeutronxsite",
    ShowText = "Interface", -- for mobile users to unhide Rayfield, change if you'd like
-   Theme = "Ocean",
+   Theme = "DarkBlue",
 
 -- Toggle HIde UI in PC
    ToggleUIKeybind = "K", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
@@ -50,15 +50,15 @@ local Misc = Window:CreateTab("Creadits", "flame")
 -- ==========================================
 -- UI TABS & SECTIONS
 -- ==========================================
-local MainSection = Change:CreateSection("Information & Version")
-
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 3.4", Content = "- [+] Add Target\n- [!!] Moved Keybind One Hit to Target Tab\n- [+] Change Script God Mode >> Freecam\n- [+] Add Auto Drop Flashlight\n- [!!] Delete Anti Vote-Kick"})
+local MainSection = Change:CreateSection("Previous updates")
 
 local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 3.8", Content = "- [+] Add highlights for tools esp, food esp and other esp\n- [!!] Remake Esp Target\n- [+] Add None (Close Tab) in Change Team\n- [+] Add Fly (Cframe)\n- [+] Add Teleport\n- [+] Fixed Out Of Local Exit\n- [+] Change Theme Button » Dropdown"})
 
 local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 4.2", Content = "- [+] Change Some Button to Dropdown\n- [+] Add Teleport\n- [+] Add Teleport Tools\n- [+] Add Teleport Player\n- [+] More Details\n- [+] Add Teleport Food\n- [+] Add Teleport Other\n- [!!] Fixed Bugs Script\n- [+] Add System Checking"})
 
 local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 4.5", Content = "- [+] Add New System Checking\n- [+] Add System Checking UI\n- [+] Add Loading Bar 0-100%\n- [+] Add Log Checking\n- [+] Add Border RGB/Rainbow\n- [+] Add Watermark\n- [+] Fixed Some Bugs\n- [+] Add Colorful In Esp Player"})
+
+local MainSection = Change:CreateSection("Recent Updates")
 
 local Paragraph = Change:CreateParagraph({Title = "✅ VERSION MAXIMUM", Content = "- [+] Remake System Checking For Mobile\n- [+] Fixed Some Bugs\n- [+] Add More Details\n- [+] Add Destroy UI\n- [+] Add More Information\n- [+] Add New System Checking For Computer"})
 
@@ -543,7 +543,7 @@ local Button = Bypass:CreateButton({
 })
 
 local MainSection = Buff:CreateSection("Information/Guide")
-local Paragraph = Buff:CreateParagraph({Title = "📢 INFORMATION", Content = "For Walkspeed and Jumppower there are several types of Anti Cheat Bypass (Just Choose One)"})
+local Paragraph = Buff:CreateParagraph({Title = "📢 INFORMATION", Content = "For Walkspeed and Jumppower there are several types of Anti Cheat Bypass (Just Choose One)\n- Cframe & Randomization Method = Recommended!\n- VelocityLinier & HookMetaMethod = Working, But Not Recommended!"})
 
 local Paragraph = Buff:CreateParagraph({Title = "🛡️ SYSTEM INFORMATION", Content = "- For the velocity method, since a different approach is used, jumppower will not work\n- To revert your character to its original state when using the velocity method, simply rejoin the server"})
 
