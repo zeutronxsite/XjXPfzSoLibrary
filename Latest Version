@@ -50,19 +50,10 @@ local Misc = Window:CreateTab("Creadits", "flame")
 -- ==========================================
 -- UI TABS & SECTIONS
 -- ==========================================
-local MainSection = Change:CreateSection("Previous updates")
-
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 3.8", Content = "- [+] Add highlights for tools esp, food esp and other esp\n- [!!] Remake Esp Target\n- [+] Add None (Close Tab) in Change Team\n- [+] Add Fly (Cframe)\n- [+] Add Teleport\n- [+] Fixed Out Of Local Exit\n- [+] Change Theme Button » Dropdown"})
-
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 4.2", Content = "- [+] Change Some Button to Dropdown\n- [+] Add Teleport\n- [+] Add Teleport Tools\n- [+] Add Teleport Player\n- [+] More Details\n- [+] Add Teleport Food\n- [+] Add Teleport Other\n- [!!] Fixed Bugs Script\n- [+] Add System Checking"})
-
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION 4.5", Content = "- [+] Add New System Checking\n- [+] Add System Checking UI\n- [+] Add Loading Bar 0-100%\n- [+] Add Log Checking\n- [+] Add Border RGB/Rainbow\n- [+] Add Watermark\n- [+] Fixed Some Bugs\n- [+] Add Colorful In Esp Player"})
 
 local MainSection = Change:CreateSection("Recent Updates")
-
 local Paragraph = Change:CreateParagraph({Title = "✅ VERSION MAXIMUM", Content = "- [+] Remake System Checking For Mobile\n- [+] Fixed Some Bugs\n- [+] Add More Details\n- [+] Add Destroy UI\n- [+] Add More Information\n- [+] Add New System Checking For Computer"})
-
-local Paragraph = Change:CreateParagraph({Title = "✅ FINAL UPDATED (Will no longer be Updated)", Content = "- [+] Add More Details\n- [+] Changes Icon And Image\n- [+] Fixed Some Bugs"})
+local Paragraph = Change:CreateParagraph({Title = "✅ FINAL UPDATED (Will no longer be Updated)", Content = "- [+] Add More Details\n- [+] Changes Icon And Image\n- [+] Fixed Some Bugs\n- [+] Fixed Choose Team Bugs"})
 
 local MainSection = MainTab:CreateSection("Main Script Toggle")
 local Paragraph = MainTab:CreateParagraph({Title = "📢 INFORMATION", Content = "Auto Attack & Auto Heal Working Now, Keybind One Hit (F) moved to the target tab"})
@@ -575,62 +566,143 @@ local Dropdown = Buff:CreateDropdown({
 
 
 local MainSection = Team:CreateSection("Choose Team")
-local Paragraph = Team:CreateParagraph({Title = "🛡️ INFORMATION", Content = "Click None If the dropdown Bug/Not Closing"})
-local Dropdown = Team:CreateDropdown({
-   Name = "Change Team",
-   Options = {"None (Close Tab)", "Fugitive", "Prison", "Police", "Civilian (Client)", "ADMIN (Client)", "Hostage (Client)", "Choosing (Client)"},
-   CurrentOption = {"None"},
-   MultipleOptions = false,
-   Flag = "ChangeTeamDropdown",
-   Callback = function(Options)
-       -- Options adalah tabel berisi string, karena MultipleOptions = false, kita ambil index pertama
-       local selectedTeam = Options[1]
-       if not selectedTeam then return end
-       
-       -- Services
-       local Players = game:GetService("Players")
-       local Teams = game:GetService("Teams")
-       local ReplicatedStorage = game:GetService("ReplicatedStorage")
-       local lp = Players.LocalPlayer
-       
-       -- Mapping nama team ke RemoteEvent-nya (gunakan FindFirstChild agar tidak hang)
-       local teamRemotes = {
-           ["Fugitive"]      = ReplicatedStorage:FindFirstChild("ShowguiFugitive"),
-           ["Prison"]        = ReplicatedStorage:FindFirstChild("Showgui"),
-           ["Police"]        = ReplicatedStorage:FindFirstChild("ShowguiGuard"),
-           ["Civilian"]      = ReplicatedStorage:FindFirstChild("ShowguiCivilian"),
-           ["ADMIN"]         = ReplicatedStorage:FindFirstChild("ShowguiAdmin"),
-           ["Hostage"]       = ReplicatedStorage:FindFirstChild("ShowguiHostage"),
-           ["Choosing"]      = ReplicatedStorage:FindFirstChild("ShowguiChoosing"),
-       }
-       
-       local remote = teamRemotes[selectedTeam]
-       
-       if remote then
-           -- Method 1: Gunakan firesignal jika ada RemoteEvent
-           local success, err = pcall(function()
-               firesignal(remote.OnClientEvent)
-           end)
-           
-           if success then
-               info("[Change Team] Successfully moved to the team: " .. selectedTeam)
-           else
-               warn("[Change Team] Failed to fire signal: " .. tostring(err))
-           end
-       else
-           -- Method 2: Fallback - gunakan method langsung untuk team tanpa RemoteEvent
-           local targetTeam = Teams:FindFirstChild(selectedTeam)
-           
-           if targetTeam then
-               -- Set Team langsung
-               lp.Team = targetTeam
-               lp.TeamColor = targetTeam.TeamColor
-               info("[Change Team] Successfully moved to " .. selectedTeam .. " (Direct Method)")
-           else
-               warn("[Change Team] Team '" .. selectedTeam .. "' Not found in the game!")
-           end
-       end
-   end,
+local Paragraph = Team:CreateParagraph({Title = "🛡️ INFORMATION", Content = "Choose Team is Fixed Now!"})
+
+-- Pastikan 'MainTab' sudah didefinisikan sebelumnya di script Rayfield Anda
+-- Contoh: local MainTab = Rayfield:CreateTab({ Name = "TLK Prison", Icon = "shield" })
+
+local selectedTeamOption = "None (Close Tab)"
+
+-- 1. Buat Dropdown untuk memilih Team (TLK Prison)
+local TeamDropdown = Team:CreateDropdown({
+    Name = "Select Team",
+    Options = {
+        "None", 
+        "Fugitive", 
+        "Prison", 
+        "Police", 
+        "Civilian (Client)", 
+        "ADMIN (Client)", 
+        "Hostage (Client)", 
+        "Choosing (Client)"
+    },
+    CurrentOption = {"None"},
+    MultipleOptions = false,
+    Flag = "TLKPrisonTeamDropdown",
+    Callback = function(options)
+        -- Rayfield biasanya mengembalikan tabel, jadi kita ambil elemen pertama
+        if type(options) == "table" and #options > 0 then
+            selectedTeamOption = options[1]
+        elseif type(options) == "string" then
+            selectedTeamOption = options
+        else
+            selectedTeamOption = "None"
+        end
+    end,
+})
+
+-- 2. Buat Button untuk mengeksekusi perubahan Team
+local ExecuteTeamButton = Team:CreateButton({
+    Name = "Execute Team Change",
+    Callback = function()
+        -- Validasi: Pastikan pengguna memilih tim yang valid
+        if selectedTeamOption == "None" or selectedTeamOption == "" then
+            Rayfield:Notify({
+                Title = "Action Cancelled",
+                Content = "Please select a valid team from the dropdown first!",
+                Duration = 5,
+                Image = "triangle-alert",
+            })
+            return
+        end
+
+        Rayfield:Notify({
+            Title = "Processing...",
+            Content = "Changing team to: " .. selectedTeamOption,
+            Duration = 3,
+            Image = "loader",
+        })
+
+        task.wait(0.5)
+
+        -- Services
+        local Players = game:GetService("Players")
+        local Teams = game:GetService("Teams")
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+        local lp = Players.LocalPlayer
+
+        -- Mapping nama opsi dropdown ke nama RemoteEvent dan nama Team di game
+        local teamMappings = {
+            ["Fugitive"] = { Remote = "ShowguiFugitive", TeamName = "Fugitive" },
+            ["Prison"] = { Remote = "Showgui", TeamName = "Prison" },
+            ["Police"] = { Remote = "ShowguiGuard", TeamName = "Police" },
+            ["Civilian (Client)"] = { Remote = "ShowguiCivilian", TeamName = "Civilian" },
+            ["ADMIN (Client)"] = { Remote = "ShowguiAdmin", TeamName = "ADMIN" },
+            ["Hostage (Client)"] = { Remote = "ShowguiHostage", TeamName = "Hostage" },
+            ["Choosing (Client)"] = { Remote = "ShowguiChoosing", TeamName = "Choosing" }
+        }
+
+        local mapping = teamMappings[selectedTeamOption]
+        local success = false
+        local message = ""
+
+        if mapping then
+            local remote = ReplicatedStorage:FindFirstChild(mapping.Remote)
+            
+            -- Method 1: Coba trigger RemoteEvent
+            if remote and remote:IsA("RemoteEvent") then
+                local fireSuccess, err = pcall(function()
+                    -- Gunakan firesignal jika tersedia di executor Anda
+                    if typeof(firesignal) == "function" then
+                        firesignal(remote.OnClientEvent)
+                    else
+                        -- Fallback universal jika firesignal tidak ada
+                        remote:FireServer()
+                    end
+                end)
+                
+                if fireSuccess then
+                    success = true
+                    message = "Successfully triggered remote for: " .. selectedTeamOption
+                else
+                    message = "Failed to fire signal: " .. tostring(err)
+                end
+            end
+
+            -- Method 2: Fallback - Set Team langsung jika remote tidak ditemukan atau gagal
+            if not success then
+                local targetTeam = Teams:FindFirstChild(mapping.TeamName)
+                if targetTeam then
+                    lp.Team = targetTeam
+                    lp.TeamColor = targetTeam.TeamColor
+                    success = true
+                    message = "Successfully moved to " .. mapping.TeamName .. " (Direct Method)"
+                else
+                    message = "Team '" .. mapping.TeamName .. "' or Remote '" .. mapping.Remote .. "' not found in game!"
+                end
+            end
+        else
+            message = "Invalid team mapping for: " .. selectedTeamOption
+        end
+
+        -- Notifikasi hasil eksekusi akhir
+        if success then
+            Rayfield:Notify({
+                Title = "Team Change Successful",
+                Content = message,
+                Duration = 6,
+                Image = "check",
+            })
+        else
+            Rayfield:Notify({
+                Title = "Team Change Failed",
+                Content = message,
+                Duration = 6,
+                Image = "triangle-alert",
+            })
+            warn("[TLK Prison] " .. message)
+        end
+    end
 })
 
 local MainSection = Team:CreateSection("Esp Toggle")
