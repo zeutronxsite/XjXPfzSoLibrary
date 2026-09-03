@@ -534,7 +534,7 @@ local Button = Bypass:CreateButton({
 })
 
 local MainSection = Buff:CreateSection("Information/Guide")
-local Paragraph = Buff:CreateParagraph({Title = "📢 INFORMATION", Content = "For Walkspeed and Jumppower there are several types of Anti Cheat Bypass (Just Choose One)\n- Cframe & Randomization Method = Recommended!\n- VelocityLinier & HookMetaMethod = Working, But Not Recommended!"})
+local Paragraph = Buff:CreateParagraph({Title = "📢 INFORMATION", Content = "For Walkspeed and Jumppower there are several types of Anti Cheat Bypass (Just Choose One)\n- Cframe & Randomization Method = Recommended!\n- VelocityLinier & HookMetaMethod = Working, But Not Recommended!\n- [Guide] Use Alt Button On Your Keyboard For Hide/Open UI"})
 
 local Paragraph = Buff:CreateParagraph({Title = "🛡️ SYSTEM INFORMATION", Content = "- For the velocity method, since a different approach is used, jumppower will not work\n- To revert your character to its original state when using the velocity method, simply rejoin the server"})
 
