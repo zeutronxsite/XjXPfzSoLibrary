@@ -52,8 +52,8 @@ local Misc = Window:CreateTab("Creadits", "flame")
 -- ==========================================
 
 local MainSection = Change:CreateSection("Recent Updates")
-local Paragraph = Change:CreateParagraph({Title = "✅ VERSION MAXIMUM", Content = "- [+] Remake System Checking For Mobile\n- [+] Fixed Some Bugs\n- [+] Add More Details\n- [+] Add Destroy UI\n- [+] Add More Information\n- [+] Add New System Checking For Computer"})
-local Paragraph = Change:CreateParagraph({Title = "✅ FINAL UPDATED (Will no longer be Updated)", Content = "- [+] Add More Details\n- [+] Changes Icon And Image\n- [+] Fixed Some Bugs\n- [+] Fixed Choose Team Bugs"})
+local Paragraph = Change:CreateParagraph({Title = "✅ VERSION MAXIMUM", Content = "- [+] Remake System Checking For Mobile\n- [+] Fixed Some Bugs\n- [+] Add More Details\n- [+] Add Destroy UI\n- [+] Add More Information\n- [+] Add New System Checking For Computer\n- [NEW] More Details"})
+local Paragraph = Change:CreateParagraph({Title = "✅ FINAL UPDATED (Will no longer be Updated)", Content = "- [+] Add More Details\n- [+] Changes Icon And Image\n- [+] Fixed Some Bugs\n- [+] Fixed Choose Team Bugs\n- [+] Fixed Cframe Fly Bug On Mobile\n- [=] Deleted System Checking Mobile & Computer\n- [+] Fixed UI Not Show Slider, Toggle, Section And More"})
 
 local MainSection = MainTab:CreateSection("Main Script Toggle")
 local Paragraph = MainTab:CreateParagraph({Title = "📢 INFORMATION", Content = "Auto Attack & Auto Heal Working Now, Keybind One Hit (F) moved to the target tab"})
@@ -549,16 +549,16 @@ local Dropdown = Buff:CreateDropdown({
     local selectedScripts = Options[1]
 
     if selectedScripts == "Walk & Jump & Fly (Cframe Method)" then
-        loadstring(game:HttpGet("https://pastebin.com/raw/pGfHN8m3"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/zeutronxsite/s65xKCrMCframe/refs/heads/main/T7h9Q3tfmsMain"))()
 
     elseif selectedScripts == "Walk & Jump (VelocityLinier)" then
-        loadstring(game:HttpGet("https://pastebin.com/raw/uAMdM8Xz"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/zeutronxsite/CvnmysQjVXLinier/refs/heads/main/Main2.lua"))()
 
     elseif selectedScripts == "Walk & Jump (HookMetaMethod" then
-        loadstring(game:HttpGet("https://pastebin.com/raw/cvZjEtFh"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/zeutronxsite/NpN75gc4NQHOOK/refs/heads/main/Main.lua"))()
 
     elseif selectedScripts == "Walk & Jump (Randomization)" then
-        loadstring(game:HttpGet("https://pastebin.com/raw/rVk9DjEv"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/zeutronxsite/7HcztJM7XHRandom/refs/heads/main/PZFEFnegiHlua"))()
 
        end
    end,
@@ -2157,7 +2157,7 @@ end
 local Dropdown = Other:CreateDropdown({
    Name = "Teleport to Tool",
    Options = toolNames,
-   CurrentOption = {toolNames[1]},
+   CurrentOption = {"None"},
    MultipleOptions = false,
    Flag = "ToolTeleportDropdown",
    Callback = function(Options)
@@ -2281,7 +2281,7 @@ end
 local Dropdown = Other:CreateDropdown({
    Name = "Teleport to Food",
    Options = toolNames,
-   CurrentOption = {toolNames[1]},
+   CurrentOption = {"None"},
    MultipleOptions = false,
    Flag = "ToolTeleportDropdown",
    Callback = function(Options)
@@ -2408,7 +2408,7 @@ end
 local Dropdown = Other:CreateDropdown({
    Name = "Teleport to Other",
    Options = toolNames,
-   CurrentOption = {toolNames[1]},
+   CurrentOption = {"None"},
    MultipleOptions = false,
    Flag = "ToolTeleportDropdown",
    Callback = function(Options)
@@ -2422,8 +2422,6 @@ local Dropdown = Other:CreateDropdown({
 
 local MainSection = Misc:CreateSection("Information")
 local Paragraph = Misc:CreateParagraph({Title = "⚒️ CREATOR SCRIPT", Content = "- Owner: Zeutronxsite\n- Developer: Zyruuux\n- Programmer: 4Streakzx & 3Streakzx\n- Builder Script: Therepositori\n- Tester Script: Exterminate0"})
-
-local Paragraph = Misc:CreateParagraph({Title = "🔍 LINK SCRIPTS & SUPPORT", Content = "- Pastebin.com/u/Ty4rds\n- https://github.com/ioerhub"})
 
 local Paragraph = Misc:CreateParagraph({Title = "🛡️ INFORMATION", Content = "- Created Team: ZeutronX\n- Max Version: Final Update\n- Status: ⚪ Discountinue"})
 
@@ -2908,4 +2906,29 @@ local Button = Misc:CreateButton({
         wait(7)
     Rayfield:Destroy()
    end
+})
+
+local Button = Misc:CreateButton({
+    Name = "Reset Character",
+    Callback = function()
+        Rayfield:Notify({
+            Title = "⚠️ Warning Detected!",
+            Content = "You will die in 3 seconds",
+            Duration = 3,
+            Image = "shield-alert",
+        })
+        
+        -- Gunakan task.delay agar tidak memblokir thread utama/UI
+        task.delay(3, function()
+            local lp = game:GetService("Players").LocalPlayer
+            local char = lp.Character
+            
+            if char then
+                local hum = char:FindFirstChildOfClass("Humanoid")
+                if hum and hum.Health > 0 then
+                    hum.Health = 0
+                end
+            end
+        end)
+    end
 })
